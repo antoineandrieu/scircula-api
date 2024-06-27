@@ -1,0 +1,8 @@
+include:
+  - template: AWS/Deploy-ECS.gitlab-ci.yml
+
+variables:
+  CI_AWS_ECS_CLUSTER: api-production
+  CI_AWS_ECS_SERVICE: scircula-api
+  CI_AWS_ECS_TASK_DEFINITION: api
+  REVIEW_DISABLED: 'true'

@@ -1,0 +1,16 @@
+db.sqlite3
+__pycache__
+files
+.env.backup
+.env
+.env.prod
+*.pid
+*.log
+# Virtual env
+scircula-api
+static
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

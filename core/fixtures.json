@@ -1,0 +1,152 @@
+[{
+	"model": "customers.customermeasurement",
+	"pk": 1,
+	"fields": {
+		"customer": 1,
+		"waist": 123,
+		"bust": 128,
+		"thigh": 79,
+		"hips": 139,
+		"created_at": "2020-03-11T14:23:39.073Z",
+		"updated_at": "2020-03-11T14:23:39.073Z"
+	}
+}, {
+	"model": "products.productcategory",
+	"pk": 1,
+	"fields": {
+		"name": "pants"
+	}
+}, {
+	"model": "products.productcategoryattribute",
+	"pk": 1,
+	"fields": {
+		"category": 1,
+		"name": "hips",
+		"shift": -4,
+		"bust": 0.0,
+		"waist": 0.14,
+		"hips": 0.9,
+		"thigh": 0.15
+	}
+}, {
+	"model": "products.product",
+	"pk": 1,
+	"fields": {
+		"vendor": 1,
+		"category": "pants",
+		"code": "17S1001-BLK",
+		"name": "SEARCH & DESTROY",
+		"content": "98% COTTON  2% ELASTANE",
+		"average_stretch": 10,
+		"fabric": "STRETCH",
+		"fit": "FITTED",
+		"created_at": "2020-03-11T14:25:33.880Z",
+		"updated_at": "2020-03-11T14:25:39.913Z"
+	}
+}, {
+	"model": "products.size",
+	"pk": 1,
+	"fields": {
+		"name": "6"
+	}
+}, {
+	"model": "products.productsize",
+	"pk": 1,
+	"fields": {
+		"product": 1,
+		"size": 1,
+		"display_size": "6",
+		"created_at": "2020-03-11T14:26:40.141Z",
+		"updated_at": "2020-03-11T14:26:40.141Z"
+	}
+}, {
+	"model": "products.productattribute",
+	"pk": 1,
+	"fields": {
+		"product_size_id": 1,
+		"name": "WAIST WIDTH",
+		"priority": 1,
+		"tag": "waist",
+		"value": 42,
+		"created_at": "2020-03-11T14:27:05.503Z",
+		"updated_at": "2020-03-11T14:27:05.503Z"
+	}
+}, {
+	"model": "auth.group",
+	"pk": 1,
+	"fields": {
+		"name": "customer",
+		"permissions": [38, 40, 44, 34, 36, 52, 56]
+	}
+}, {
+	"model": "auth.user",
+	"pk": 1,
+	"fields": {
+		"password": "pbkdf2_sha256$180000$wLneviyZqVhY$QYSsmvzFs8hAIOeurkn1guuPpbEzwn9BCdXCmCByzFU=",
+		"last_login": "2020-03-11T10:11:33.327Z",
+		"is_superuser": true,
+		"username": "admin",
+		"first_name": "",
+		"last_name": "",
+		"email": "admin",
+		"is_staff": true,
+		"is_active": true,
+		"date_joined": "2020-03-11T09:37:50.416Z",
+		"groups": [],
+		"user_permissions": []
+	}
+}, {
+	"model": "auth.user",
+	"pk": 2,
+	"fields": {
+		"password": "pbkdf2_sha256$180000$8hFnANRQxMTS$00fXwLvAgEkQj5pEbYG4L/h80IIc9bC3uH6TenspFjw=",
+		"last_login": null,
+		"is_superuser": false,
+		"username": "sarah",
+		"first_name": "Sarah",
+		"last_name": "Vigotte",
+		"email": "sarah@vigotte.com",
+		"is_staff": false,
+		"is_active": true,
+		"date_joined": "2020-03-11T14:09:57Z",
+		"groups": [1],
+		"user_permissions": []
+	}
+}, {
+	"model": "auth.user",
+	"pk": 3,
+	"fields": {
+		"password": "pbkdf2_sha256$180000$eoG8nuKUd5lm$06/kd1y6TqHTbpn/+u77sfe1ILZiC0RXlzn/p5JZup4=",
+		"last_login": null,
+		"is_superuser": false,
+		"username": "levice",
+		"first_name": "",
+		"last_name": "",
+		"email": "",
+		"is_staff": false,
+		"is_active": true,
+		"date_joined": "2020-03-11T14:19:12.664Z",
+		"groups": [],
+		"user_permissions": []
+	}
+}, {
+	"model": "customers.customer",
+	"pk": 1,
+	"fields": {
+		"customer": 2,
+		"created_at": "2020-03-11T14:19:36.002Z",
+		"updated_at": "2020-03-11T14:19:36.002Z",
+		"vendor": [1]
+	}
+}, {
+	"model": "vendors.vendor",
+	"pk": 1,
+	"fields": {
+		"user": 3,
+		"name": "Levice",
+		"auth_key": "ea11950c291f2cd56d21621802ed37091d34032670fe617968fe768e77d29f8e",
+		"valid_till": "2021-12-31T14:18:13Z",
+		"created_at": "2020-03-11T14:19:19.685Z",
+		"updated_at": "2020-03-11T14:19:19.685Z"
+	}
+}]

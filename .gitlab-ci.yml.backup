@@ -1,0 +1,26 @@
+image: ubuntu
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan api-dev.scircula.com >> ~/.ssh/known_hosts
+  - ssh-keyscan api-demo.scircula.com >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+deploy_dev:
+  stage: deploy
+  only:
+    - /^SOF-*/
+    - main
+  script:
+    - ssh gitlab-ci@api-dev.scircula.com "cd /opt/scircula-api && git checkout $CI_COMMIT_BRANCH && git pull && source scircula-api/bin/activate && pip install -r requirements.txt && (./manage.py migrate || true) && uwsgi --reload api.uwsgi.pid"
+
+deploy_demo:
+  stage: deploy
+  only:
+    - main
+  script:
+    - ssh  gitlab-ci@api-demo.scircula.com "cd /opt/scircula-api && git pull && source scircula-api/bin/activate && pip install -r requirements.txt && (./manage.py migrate || true) && uwsgi --reload api.uwsgi.pid"
